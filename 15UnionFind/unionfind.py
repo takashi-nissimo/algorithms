@@ -54,19 +54,33 @@ class WeightedQuickUnionUF(QuickUnionUF):
 
     def __init__(self, N: int):
         super().__init__(N)
-        self.sz = [1] * N
+        self._count = N  # number of connected components
+        self.sz = [1] * N  # size of each node
+        self.largest = list(range(N))  # largest element in each component
+
+    def count(self) -> int:
+        """return the number of connected components"""
+        return self._count
+
+    def find_largest(self, p: int) -> int:
+        """return the largest element in the connected component containing p"""
+        return self.largest[self.root(p)]
 
     def union(self, p: int, q: int):
         i = self.root(p)
         j = self.root(q)
+        larger = max(self.largest[i], self.largest[j])
         if i == j:
             return
         if self.sz[i] < self.sz[j]:
             self.id[i] = j
             self.sz[j] += self.sz[i]
+            self.largest[j] = larger
         else:
             self.id[j] = i
             self.sz[i] += self.sz[j]
+            self.largest[i] = larger
+        self._count -= 1
 
 
 class WeightedQuickUnionPathCompressionUF(WeightedQuickUnionUF):
@@ -83,7 +97,9 @@ class WeightedQuickUnionPathCompressionUF(WeightedQuickUnionUF):
 
 
 if __name__ == '__main__':
-    with open('tinyUF.txt') as f:
+    from sys import argv
+    datafile = f'{argv[1]}.txt'
+    with open(datafile) as f:
         l = [s.strip() for s in f.readlines()]
     N = int(l.pop(0))
     uf = WeightedQuickUnionPathCompressionUF(N)
@@ -91,4 +107,4 @@ if __name__ == '__main__':
         p, q = [int(i) for i in l.pop(0).split(' ')]
         if not uf.connected(p, q):
             uf.union(p, q)
-            print(f'{p} {q}')
+            print(p, q, uf.count(), uf.find_largest(0))

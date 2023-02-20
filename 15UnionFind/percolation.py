@@ -104,17 +104,18 @@ class PercolationStats():
 
 if __name__ == '__main__':
     from sys import argv
-    from time import time
-
     n = int(argv[1])
     traials = int(argv[2])
 
+    from time import time
     start_time = time()
     stats = PercolationStats(n, traials)
     total_running_time = time() - start_time
 
+    from sizeof import total_size
     p = Percolation(n)
-    total_memory_usage = p.grid.__sizeof__() + p.uf.__sizeof__()
+    total_memory_usage \
+        = total_size(p.grid) + total_size(p.uf.id) + total_size(p.uf.sz)
 
     stats.print()
     print(f'{total_running_time = } [s]')
