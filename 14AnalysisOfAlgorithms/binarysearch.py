@@ -1,16 +1,22 @@
 from typing import Union
 
 
-def binary_search(a: list, key: int, way: int = +1) -> Union[int, None]:
+def binary_search(a: list, key: int, descend: bool = False) -> Union[int, None]:
     lo, hi = 0, len(a) - 1
     while lo <= hi:
         mid = lo + (hi - lo) // 2
-        if (diff := a[mid] - key) == 0:
+        if a[mid] == key:
             return mid
-        if diff * way > 0:
-            hi = mid - 1
+        if descend:
+            if a[mid] < key:
+                hi = mid - 1
+            else:
+                lo = mid + 1
         else:
-            lo = mid + 1
+            if a[mid] > key:
+                hi = mid - 1
+            else:
+                lo = mid + 1
 
 
 if __name__ == '__main__':

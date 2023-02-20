@@ -21,10 +21,10 @@ def search_bitonic(a: list, key: int) -> Union[int, None]:
     elif key == a[peak]:
         return peak
     else:
-        if (idx := binary_search(a, key, way=+1)) is not None:
+        if (idx := binary_search(a[:peak-1], key, descend=False)) is not None:
             return idx
-        if (idx := binary_search(a, key, way=-1)) is not None:
-            return idx
+        if (idx := binary_search(a[peak+1:], key, descend=True)) is not None:
+            return idx + peak + 1
 
 
 if __name__ == '__main__':
