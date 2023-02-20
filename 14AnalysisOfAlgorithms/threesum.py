@@ -1,19 +1,8 @@
 """3-SUM. Given N distinct integers, how many triples sum to exactly zero?"""
 
-from typing import Union
 from itertools import combinations
 
-
-def binary_search(a: list, key: int, way: int = +1) -> Union[int, None]:
-    lo, hi = 0, len(a) - 1
-    while lo <= hi:
-        mid = lo + (hi - lo) // 2
-        if (diff := a[mid] - key) == 0:
-            return mid
-        if diff * way > 0:
-            hi = mid - 1
-        else:
-            lo = mid + 1
+from binarysearch import binary_search
 
 
 class BruteForceThreeSum():
