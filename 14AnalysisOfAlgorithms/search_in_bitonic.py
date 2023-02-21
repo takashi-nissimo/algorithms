@@ -1,3 +1,10 @@
+"""Search in a bitonic array.
+An array is bitonic if it is comprised of an increasing sequence of integers
+followed immediately by a decreasing sequence of integers.
+Write a program that, given a bitonic array of n distinct integer values,
+determines whether a given integer is in the array.
+"""
+
 from typing import Union
 
 from binarysearch import binary_search
