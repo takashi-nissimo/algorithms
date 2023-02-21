@@ -1,7 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 
-class UF(metaclass=ABCMeta):
+class UnionFind(metaclass=ABCMeta):
     """Abstract Class for Union Find"""
     @abstractmethod
     def connected(self, p: int, q: int) -> bool:
@@ -12,7 +12,7 @@ class UF(metaclass=ABCMeta):
         pass
 
 
-class QuickFindUF(UF):
+class QuickFindUF(UnionFind):
     """Quick-Find Algorithm for Union Find (Eager Approach)"""
 
     def __init__(self, N: int):
@@ -29,7 +29,7 @@ class QuickFindUF(UF):
                 self.id[i] = qid
 
 
-class QuickUnionUF(UF):
+class QuickUnionUF(UnionFind):
     """Quick-Union Algorithm for Union Find (Lazy Approach)"""
 
     def __init__(self, N: int):
