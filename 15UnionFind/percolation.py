@@ -16,7 +16,7 @@ class Percolation():
 
     def open(self, row: int, col: int):
         """opens the site (row, col) if it is not open already"""
-        if self.isOpen(row, col):
+        if self.is_open(row, col):
             return
         self.grid[row][col] = True
         site = row * self.n + col
@@ -24,32 +24,32 @@ class Percolation():
         # look top
         if row == 0:
             self.uf.union(site, -1)  # union with virtual top site
-        elif self.isOpen(row - 1, col):
+        elif self.is_open(row - 1, col):
             self.uf.union(site, site - self.n)
 
         # look bottom
         if row in (self.n - 1, -1):
             self.uf.union(site, -2)  # union with virtual bottom site
-        elif self.isOpen(row + 1, col):
+        elif self.is_open(row + 1, col):
             self.uf.union(site, site + self.n)
 
         # look left
-        if col > 0 and self.isOpen(row, col - 1):
+        if col > 0 and self.is_open(row, col - 1):
             self.uf.union(site, site - 1)
 
         # look right
-        if col < self.n - 1 and self.isOpen(row, col + 1):
+        if col < self.n - 1 and self.is_open(row, col + 1):
             self.uf.union(site, site + 1)
 
-    def isOpen(self, row: int, col: int) -> bool:
+    def is_open(self, row: int, col: int) -> bool:
         """is the site (row, col) open?"""
         return self.grid[row][col]
 
-    def isFull(self, row: int, col: int) -> bool:
+    def is_full(self, row: int, col: int) -> bool:
         """is the site (row, col) full?"""
         return self.uf.connected(-1, row * self.n + col)
 
-    def numberOfOpenSites(self) -> int:
+    def num_open_sites(self) -> int:
         """returns the number of open sites"""
         return sum(sum(row) for row in self.grid)
 
@@ -71,7 +71,7 @@ class PercolationStats():
             for site in sample(range(n ** 2), n ** 2):
                 percolation.open(*divmod(site, n))
                 if percolation.percolates():
-                    self.thrs.append(percolation.numberOfOpenSites() / n ** 2)
+                    self.thrs.append(percolation.num_open_sites() / n ** 2)
                     break
 
     @cache
