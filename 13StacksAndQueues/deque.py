@@ -14,10 +14,10 @@ class Deque(Iterable[(Item := TypeVar('Item'))]):
         def __init__(self, deque):
             self.current: Deque.Node = deque.first
 
-        def has_next(self):
+        def has_next(self) -> bool:
             return self.current is not None
 
-        def __next__(self):
+        def __next__(self) -> Item:
             if not self.has_next():
                 raise Exception('NoSuchElementException')
             item = self.current.item
