@@ -1,8 +1,8 @@
-from typing import Generic, TypeVar
+from typing import TypeVar
 from collections.abc import Iterable, Iterator
 
 
-class Deque(Iterable[Generic[(Item := TypeVar('Item'))]]):
+class Deque(Iterable[(Item := TypeVar('Item'))]):
 
     def __init__(self):
         """construct an empty deque"""
@@ -32,7 +32,7 @@ class Deque(Iterable[Generic[(Item := TypeVar('Item'))]]):
         """remove and return the item from the back"""
         pass
 
-    def iterator(self) -> Iterator[Generic[Item]]:
+    def iterator(self) -> Iterator[Item]:
         """return an iterator over items in order from front to back"""
         pass
 
