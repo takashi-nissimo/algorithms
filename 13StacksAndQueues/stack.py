@@ -76,12 +76,10 @@ if __name__ == '__main__':
 
     stack = StackWithMax()
     print('\n*', stack.__class__.__name__)
-    numbers = (3.14, 1, 5, 9, 2, 65)
+    numbers = (3.1, 4, 1, 5, 9)
     print(f'{numbers = }')
     for n in numbers:
         stack.push(n)
-        print(f'stack.push({n})')
-        print(f'{stack.max() = }')
+        print(f'stack.push({n})\t\t{stack.max() = }')
     for _ in numbers[1:]:
-        print(f'{stack.pop() = }')
-        print(f'{stack.max() = }')
+        print(f'{stack.pop() = }\t{stack.max() = }')
