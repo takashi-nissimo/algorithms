@@ -1,4 +1,4 @@
-# Analysis of Algorithms
+# Stacks and Queues
 
 ## Scripts
 |file|algorithm|
