@@ -98,8 +98,8 @@ class WeightedQuickUnionPathCompressionUF(WeightedQuickUnionUF):
 
 if __name__ == '__main__':
     from sys import argv
-    datafile = f'{argv[1]}.txt'
-    with open(datafile) as f:
+    from pathlib import Path
+    with open(Path(argv[1])) as f:
         l = [s.strip() for s in f.readlines()]
     N = int(l.pop(0))
     uf = WeightedQuickUnionPathCompressionUF(N)
