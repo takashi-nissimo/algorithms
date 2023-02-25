@@ -11,7 +11,7 @@ class Deque(Iterable[(Item := TypeVar('Item'))]):
             self.prev: self[Item] = None
 
     class DequeIterator(Iterator[Item]):
-        def __init__(self, deque):
+        def __init__(self, deque: Iterable[Item]):
             self.current: Deque.Node = deque.first
 
         def has_next(self) -> bool:
