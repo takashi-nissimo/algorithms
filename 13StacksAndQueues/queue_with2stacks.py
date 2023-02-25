@@ -23,7 +23,7 @@ class QueueWith2Stacks:
 
     def dequeue(self):
         if not self.s1:
-            print("Q is Empty")
+            raise Exception('NoSuchElementException')
 
         return self.s1.pop()
 
