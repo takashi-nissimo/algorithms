@@ -15,5 +15,4 @@ def permutation(n, *items):
 if __name__ == '__main__':
     from sys import argv
     argv.pop(0)
-    print('* Permutation')
     permutation(*argv)
