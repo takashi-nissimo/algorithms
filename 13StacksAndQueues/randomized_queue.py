@@ -57,15 +57,15 @@ class RandomizedQueue(Iterable[(Item := TypeVar('Item'))]):
 
 
 if __name__ == '__main__':
-    rand_queue = RandomizedQueue()
+    randq = RandomizedQueue()
     items = list(range(6))
-    [rand_queue.enqueue(i) for i in items]
+    [randq.enqueue(i) for i in items]
     print(f'{items = }')
-    print(f'{rand_queue.sample() = },\t{rand_queue.size() = }')
-    print(f'{rand_queue.sample() = },\t{rand_queue.size() = }')
-    print(f'{rand_queue.dequeue() = },\t{rand_queue.size() = }')
-    print(f'{rand_queue.dequeue() = },\t{rand_queue.size() = }')
+    print(f'{randq.sample() = },\t{randq.size() = }')
+    print(f'{randq.sample() = },\t{randq.size() = }')
+    print(f'{randq.dequeue() = },\t{randq.size() = }')
+    print(f'{randq.dequeue() = },\t{randq.size() = }')
     try:
-        [print(f'{item = }') for item in rand_queue]
+        [print(f'{item = }') for item in randq]
     except Exception:
         pass
