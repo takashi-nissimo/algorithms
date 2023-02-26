@@ -12,16 +12,16 @@ class Deque(Iterable[(Item := TypeVar('Item'))]):
 
     class DequeIterator(Iterator[Item]):
         def __init__(self, deque: Iterable[Item]):
-            self.current: Deque.Node = deque.first
+            self.node: Deque.Node = deque.first
 
         def has_next(self) -> bool:
-            return self.current is not None
+            return self.node is not None
 
         def __next__(self) -> Item:
             if not self.has_next():
                 raise Exception('NoSuchElementException')
-            item = self.current.item
-            self.current = self.current.next
+            item = self.node.item
+            self.node = self.node.next
             return item
 
         def remove(self):
@@ -108,6 +108,6 @@ if __name__ == '__main__':
     print(f'{deque.remove_last() = }')
     print(f'{deque.size() = }')
     try:
-        [print(f'{i = }') for i in deque]
+        [print(f'{item = }') for item in deque]
     except Exception:
         pass
