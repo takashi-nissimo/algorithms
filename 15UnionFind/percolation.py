@@ -105,11 +105,11 @@ class PercolationStats():
 if __name__ == '__main__':
     from sys import argv
     n = int(argv[1])
-    traials = int(argv[2])
+    trials = int(argv[2])
 
     from time import time
     start_time = time()
-    stats = PercolationStats(n, traials)
+    stats = PercolationStats(n, trials)
     total_running_time = time() - start_time
 
     from sizeof import total_size
