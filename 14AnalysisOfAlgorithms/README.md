@@ -8,3 +8,15 @@
 |threesum.py|3-Sum|
 |search_in_bitonic.py|Search in a Bitonic Array|
 |eggdrop.py|Egg Drop|
+
+## 3-SUM
+Given N distinct integers, how many triples sum to exactly zero?
+
+### Results
+```sh
+(algorithms) $ python3 threesum.py 400
+min(a)=-1995, max(a)=1999, len(a)=400
+BruteForceThreeSum      count: 1971     time: 0.8479299545288086
+LinearithmicThreeSum    count: 1971     time: 0.1300516128540039
+QuadraticThreeSum       count: 1971     time: 0.012657880783081055
+```

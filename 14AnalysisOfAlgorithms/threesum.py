@@ -81,6 +81,7 @@ class QuadraticThreeSum():
 if __name__ == '__main__':
     from time import time
     from random import sample
+    from sys import argv
 
     def print_results(threesum, a):
         t0 = time()
@@ -88,8 +89,9 @@ if __name__ == '__main__':
         t = time() - t0
         print(f'{threesum.__name__}\tcount: {c}\ttime: {t}')
 
-    a = sample(range(-1000, 1000), k=400)
-    print(f'{len(a) = }')
+    k = int(argv[1])
+    a = sample(range(-5 * k, 5 * k), k)
+    print(f'{min(a)=}, {max(a)=}, {len(a)=}')
     # QuadraticThreeSum.print_all(a)
     print_results(BruteForceThreeSum, a)
     print_results(LinearithmicThreeSum, a)
