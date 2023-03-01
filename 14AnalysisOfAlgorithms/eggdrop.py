@@ -157,7 +157,8 @@ class EggDropStats():
 
 
 if __name__ == '__main__':
-    n = 2048
+    from sys import argv
+    n = int(argv[1])
     EggDropStats(EggDropV0, n).print()
     EggDropStats(EggDropV1, n).print()
     EggDropStats(EggDropV2, n).print()
