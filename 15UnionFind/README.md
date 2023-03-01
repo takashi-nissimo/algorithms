@@ -15,3 +15,19 @@
 [specification](https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php)
 
 <img src=https://coursera.cs.princeton.edu/algs4/assignments/percolation/percolates-yes.png width=400>
+
+### Results
+```sh
+(algorithms) $ python3 percolation.py 200 100
+mean                    = 0.5924785
+stddev                  = 0.009659263766724227
+95% confidence interval = [0.5905852843017221, 0.594371715698278]
+total_running_time = 11.621068239212036 [s]
+total_memory_usage = 2093104 [bytes]
+(algorithms) $ python3 percolation.py 2 10000
+mean                    = 0.664775
+stddev                  = 0.1185088765045937
+95% confidence interval = [0.66245222602051, 0.66709777397949]
+total_running_time = 0.20238757133483887 [s]
+total_memory_usage = 656 [bytes]
+```
