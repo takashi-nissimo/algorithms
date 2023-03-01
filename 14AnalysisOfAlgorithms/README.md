@@ -21,6 +21,25 @@ LinearithmicThreeSum    count: 1971     time: 0.1300516128540039
 QuadraticThreeSum       count: 1971     time: 0.012657880783081055
 ```
 
+## Search in a bitonic array.
+An array is bitonic if it is comprised of an increasing sequence of integers
+followed immediately by a decreasing sequence of integers.
+Write a program that, given a bitonic array of n distinct integer values,
+determines whether a given integer is in the array.
+- Standard version: Use ~ 3 lg n compares in the worst case.
+- Signing bonus: Use ~ 2 lg n compares in the worst case
+(and prove that no algorithm can guarantee to perform fewer than ~ 2 lg n compares in the worst case).
+
+### Results
+```
+(algorithms) $ python3 search_in_bitonic.py 
+a = [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 9, 7, 5, 3, 1, -1, -3, -5, -7, -9]
+search_bitonic(a, 1) = 14
+search_bitonic(a, 2) = 6
+search_bitonic(a, -9) = 19
+search_bitonic(a, 10) = None
+```
+
 ## Egg Drop
 Suppose that you have an n-story building (with floors 1 through n)
 and plenty of eggs. An egg breaks if it is dropped from floor T or higher
