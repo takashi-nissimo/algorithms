@@ -13,7 +13,7 @@
 Given N distinct integers, how many triples sum to exactly zero?
 
 ### Results
-```sh
+```shell-session
 (algorithms) $ python3 threesum.py 400
 min(a)=-1995, max(a)=1999, len(a)=400
 BruteForceThreeSum      count: 1971     time: 0.8479299545288086
@@ -31,7 +31,7 @@ determines whether a given integer is in the array.
 (and prove that no algorithm can guarantee to perform fewer than ~ 2 lg n compares in the worst case).
 
 ### Results
-```
+```shell-session
 (algorithms) $ python3 search_in_bitonic.py 20 1000
 n = 20, trials = 1000, mean_worst_time = 3.0491352081298827e-06
 (algorithms) $ python3 search_in_bitonic.py 40 1000
@@ -56,7 +56,7 @@ the value of T given the following limitations on the number of eggs and tosses:
 - Version 4: 2 eggs and <= c*sqrt(T) tosses for some fixed constant c.
 
 ### Results
-```
+```shell-session
 (algorithms) $ python3 eggdrop.py 2048
 EggDropV0,      n: 2048,        mean eggs: 1.000,       max eggs: 1,    mean tosses: 1024.500,  max tosses: 2048
 EggDropV1,      n: 2048,        mean eggs: 6.500,       max eggs: 12,   mean tosses: 11.000,    max tosses: 12

@@ -31,6 +31,6 @@ class QueueWith2Stacks:
 if __name__ == '__main__':
     queue = QueueWith2Stacks()
     items = (1, .5, 'abc', [1, 2, 3], None)
-    print(f'{items = }')
+    print(f'{items = }  # enqueue in this order')
     [queue.enqueue(i) for i in items]
     [print(f'{queue.dequeue() = }') for _ in items]

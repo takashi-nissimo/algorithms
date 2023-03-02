@@ -14,7 +14,7 @@
 ![uf_performance](https://user-images.githubusercontent.com/19323409/219846472-6e943997-08aa-431b-8324-b9dd45d927ba.png)
 
 ### Results
-```sh
+```shell-session
 (algorithms) $ python3 unionfind.py tinyUF.txt 
 N = 10, WeightedQuickUnionPathCompressionUF
 uf.union(4, 3) uf.count() = 9 uf.find_largest(0) = 0
@@ -33,7 +33,7 @@ uf.union(6, 1) uf.count() = 2 uf.find_largest(0) = 7
 <img src=https://coursera.cs.princeton.edu/algs4/assignments/percolation/percolates-yes.png width=400>
 
 ### Results
-```sh
+```shell-session
 (algorithms) $ python3 percolation.py 200 100
 mean                    = 0.5924785
 stddev                  = 0.009659263766724227
@@ -57,7 +57,7 @@ design a data type so that all operations (except construction) should take
 logarithmic time or better.
 
 ### Results
-```sh
+```shell-session
 (algorithms) $ python3 successor_with_delete.py 8
 remove(0) -> successors: [1, 1, 2, 3, 4, 5, 6, 7]
 remove(6) -> successors: [1, 1, 2, 3, 4, 5, 7, 7]
