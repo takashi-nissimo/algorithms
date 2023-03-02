@@ -1,5 +1,5 @@
 # Union-find
-[Lecture Slides](https://d3c33hcgiwev3.cloudfront.net/_b65e7611894ba175de27bd14793f894a_15UnionFind.pdf?Expires=1677715200&Signature=Invyy2BsyaeQiXefu0j1vBGwvMl19JqMOImwCJuiXYMaNnAbgoCPSPJ3ThG4LWKGV08OCrfshgjCml6Oj7W4pgeWSeCszPnrAE19tpNbZPTyG9ykE-kmv1SWFAGek~g~d~8bLM0QQEtDE5~7O2MSCe6qmY1C3A9yPC3bOXL7iGU_&Key-Pair-Id=APKAJLTNE6QMUY6HBC5A)
+[Lecture Slides](https://www.coursera.org/learn/algorithms-part1/supplement/bcelg/lecture-slides)
 
 ## Scripts
 |file|algorithm|
