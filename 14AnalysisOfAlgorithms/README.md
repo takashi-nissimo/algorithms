@@ -13,6 +13,7 @@
 
 ### Results
 ```shell-session
+(algorithms) $ python3 binarysearch.py 
 a = [-20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 binary_search(a, -20) = 0
 binary_search(a, 18) = 19
