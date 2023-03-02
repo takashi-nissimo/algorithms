@@ -9,6 +9,17 @@
 |search_in_bitonic.py|Search in a Bitonic Array|
 |eggdrop.py|Egg Drop|
 
+## Binary search
+
+### Results
+```shell-session
+a = [-20, -18, -16, -14, -12, -10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+binary_search(a, -20) = 0
+binary_search(a, 18) = 19
+binary_search(a, 10) = 15
+binary_search(a, 11) = None
+```
+
 ## 3-SUM
 Given N distinct integers, how many triples sum to exactly zero?
 
@@ -21,7 +32,7 @@ LinearithmicThreeSum    count: 1971     time: 0.1300516128540039
 QuadraticThreeSum       count: 1971     time: 0.012657880783081055
 ```
 
-## Search in a bitonic array.
+## Search in a bitonic array
 An array is bitonic if it is comprised of an increasing sequence of integers
 followed immediately by a decreasing sequence of integers.
 Write a program that, given a bitonic array of n distinct integer values,
