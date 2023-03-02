@@ -32,12 +32,16 @@ determines whether a given integer is in the array.
 
 ### Results
 ```
-(algorithms) $ python3 search_in_bitonic.py 
-a = [-10, -8, -6, -4, -2, 0, 2, 4, 6, 8, 9, 7, 5, 3, 1, -1, -3, -5, -7, -9]
-search_bitonic(a, 1) = 14
-search_bitonic(a, 2) = 6
-search_bitonic(a, -9) = 19
-search_bitonic(a, 10) = None
+(algorithms) $ python3 search_in_bitonic.py 20 1000
+n = 20, trials = 1000, mean_worst_time = 3.0491352081298827e-06
+(algorithms) $ python3 search_in_bitonic.py 40 1000
+n = 40, trials = 1000, mean_worst_time = 3.67283821105957e-06
+(algorithms) $ python3 search_in_bitonic.py 60 1000
+n = 60, trials = 1000, mean_worst_time = 5.14531135559082e-06
+(algorithms) $ python3 search_in_bitonic.py 80 1000
+n = 80, trials = 1000, mean_worst_time = 4.8894882202148435e-06
+(algorithms) $ python3 search_in_bitonic.py 100 1000
+n = 100, trials = 1000, mean_worst_time = 6.241321563720703e-06
 ```
 
 ## Egg Drop

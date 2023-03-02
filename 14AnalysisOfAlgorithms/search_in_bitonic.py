@@ -28,16 +28,34 @@ def search_bitonic(a: list, key: int) -> Union[int, None]:
     elif key == a[peak]:
         return peak
     else:
-        if (idx := binary_search(a[:peak-1], key, descend=False)) is not None:
+        if (idx := binary_search(a[:peak], key, descend=False)) is not None:
             return idx
         if (idx := binary_search(a[peak+1:], key, descend=True)) is not None:
             return idx + peak + 1
 
 
 if __name__ == '__main__':
-    a = list(range(-10, 10, 2)) + list(reversed(range(-9, 11, 2)))
-    print(f'{a = }')
-    print(f'{search_bitonic(a, 1) = }')
-    print(f'{search_bitonic(a, 2) = }')
-    print(f'{search_bitonic(a, -9) = }')
-    print(f'{search_bitonic(a, 10) = }')
+    from sys import argv
+    from random import randrange
+    from time import time
+    from statistics import mean
+    
+    def calc_worst_time(n: int, verbose: bool = False) -> float:
+        p = randrange(1, n)
+        a = list(range(-p, p, 2)) + list(reversed(range(p-n+1, n-p+1, 2)))
+        
+        t_max = 0.
+        for key in a:
+            t0 = time()
+            idx = search_bitonic(a, key)
+            t = time() - t0
+            t_max = max(t_max, t)
+            if verbose:
+                print(f'{key = }, {idx = }, time = {t}')
+        if verbose:
+            print(f'{a = }\nworst time: {t_max}')
+        return t_max
+
+    n, trials = int(argv[1]), int(argv[2])
+    mean_worst_time = mean(calc_worst_time(n) for _ in range(trials))
+    print(f'{n = }, {trials = }, {mean_worst_time = }')
