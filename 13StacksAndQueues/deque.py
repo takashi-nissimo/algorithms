@@ -99,15 +99,19 @@ class Deque(Iterable[(Item := TypeVar('Item'))]):
 
 if __name__ == '__main__':
     deque = Deque()
-    deque.add_first('b')
-    deque.add_first('a')
-    deque.add_last('y')
-    deque.add_last('z')
+    l_first, l_last = ['c', 'b', 'a'], ['x', 'y', 'z']
+    print(f'{l_first = }  # add_first in this order')
+    print(f'{l_last = }  # add_last in this order')
+    [deque.add_first(i) for i in l_first]
+    [deque.add_last(i) for i in l_last]
     print(f'{deque.size() = }')
     print(f'{deque.remove_first() = }')
     print(f'{deque.remove_last() = }')
     print(f'{deque.size() = }')
     try:
-        [print(f'{item = }') for item in deque]
+        iterator = deque.__iter__()
+        print('iterator = deque.__iter__()')
+        while True:
+            print(f'{iterator.__next__() = }')
     except Exception:
         pass
