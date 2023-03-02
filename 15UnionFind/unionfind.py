@@ -103,8 +103,13 @@ if __name__ == '__main__':
         l = [s.strip() for s in f.readlines()]
     N = int(l.pop(0))
     uf = WeightedQuickUnionPathCompressionUF(N)
+    print(f'{N = }, {uf.__class__.__name__}')
     while l:
         p, q = [int(i) for i in l.pop(0).split(' ')]
         if not uf.connected(p, q):
             uf.union(p, q)
-            print(p, q, uf.count(), uf.find_largest(0))
+            print(
+                f'uf.union({p}, {q})',
+                f'{uf.count() = }',
+                f'{uf.find_largest(0) = }',
+            )
