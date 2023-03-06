@@ -21,6 +21,10 @@ Read strings from standard input.
 ### Results
 ```shell-session
 (algorithms) $ python3 stack.py 
+* LinkedListStack
+strings = ['to', 'be', 'or', 'not', 'to', '-', 'be', '-', '-', 'that', '-', '-', '-', 'is']
+pops = ['to', 'be', 'not', 'that', 'or', 'be']
+* ResizingArrayStack
 strings = ['to', 'be', 'or', 'not', 'to', '-', 'be', '-', '-', 'that', '-', '-', '-', 'is']
 pops = ['to', 'be', 'not', 'that', 'or', 'be']
 ```
